@@ -18,17 +18,17 @@
 				return $x->format($total);
 			}
 			else
-				return $total;
+				echo $total;
 		}
 		
 		
 		else{
 			
 			if(!is_numeric($a)){
-				return $a." is not a number";
+				echo $a." is not a number";
 			}
 			elseif(!is_numeric($b)){
-				return $b." is not a number"; 
+				echo $b." is not a number"; 
 			}
 			
 		}
