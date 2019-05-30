@@ -3,7 +3,7 @@
 	function ratFunct($a,$b,$to_words=""){
 		
 		
-		$f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+		$x = new NumberFormatter("en", NumberFormatter::SPELLOUT);
 		
 		
 		if(is_numeric($a) && is_numeric($b)){
@@ -15,13 +15,13 @@
 			
 			}
 			if($to_words!=null){
-				return $f->format($total);
+				return $x->format($total);
 			}
 			else
 				return $total;
 		}
 		
-		//check if one of the arguments is a number
+		
 		else{
 			
 			if(!is_numeric($a)){
