@@ -1,0 +1,20 @@
+<?php
+	
+	function func($a,$b){
+		$x = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+		
+		$total=0;
+		for($i=0;$i<$b;$i++){
+			
+			$total=$total+$a;
+		
+		}
+		 return $total." ".$x->format($total);
+	}
+	
+    echo func(1,3);
+    echo func(4,5,true);
+    echo func(1,raten,false);
+    echo func(5,4.5);
+    echo func(3.4,5);
+?>
