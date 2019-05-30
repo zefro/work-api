@@ -1,20 +1,44 @@
 <?php
 	
-	function func($a,$b){
-		$x = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+	function ratFunct($a,$b,$to_words=""){
 		
-		$total=0;
-		for($i=0;$i<$b;$i++){
+		
+		$f = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+		
+		
+		if(is_numeric($a) && is_numeric($b)){
+			$total=0;
 			
-			$total=$total+$a;
-		
+			for($i=0;$i<$b;$i++){
+				
+				$total=$total+$a;
+			
+			}
+			if($to_words!=null){
+				return $f->format($total);
+			}
+			else
+				return $total;
 		}
-		 return $total." ".$x->format($total);
+		
+		//check if one of the arguments is a number
+		else{
+			
+			if(!is_numeric($a)){
+				return $a." is not a number";
+			}
+			elseif(!is_numeric($b)){
+				return $b." is not a number"; 
+			}
+			
+		}
+		
+		
 	}
 	
-    echo func(1,3);
-    echo func(4,5,true);
-    echo func(1,raten,false);
-    echo func(5,4.5);
-    echo func(3.4,5);
+	echo ratFunct(1,3)."<br>";
+	echo ratFunct(4,5,true)."<br>";
+	echo ratFunct(1,'raven',false)."<br>";
+	echo ratFunct(5,4.5)."<br>";
+	echo ratFunct(3.4,5,'$$')."<br>";
 ?>
